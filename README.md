@@ -1,5 +1,5 @@
 # go-exception
-golang的error异常处理，链式调用。提供类似java的`try...catch...finally`和`try...with...resource`机制。
+golang error异常处理。提供类似java的`try...catch...finally`和`try...with...resource`机制。
 
 # Usage
 
@@ -24,7 +24,7 @@ golang的error异常处理，链式调用。提供类似java的`try...catch...fi
 `try...with...resource`对象必须实现io.Closer接口，处理结束后实现io自动关闭。
 
 ```
-    f, _ := os.Open("./exception_test.go")
+        f, _ := os.Open("./exception_test.go")
 	trs := NewTryResource(f)
 	trs.Try(func() {
 		scanner = bufio.NewScanner(f)
