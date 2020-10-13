@@ -6,7 +6,7 @@ golang error异常处理。提供类似java的`try...catch...finally`和`try...w
 `try...catch...finally`需要显式调用Throw方法抛出异常才能被外层捕获。
 
 ```
-tr := NewTrier()
+tr := exception.NewTrier()
 tr.Try(func() {
         // 函数体
 	n1, err := strconv.Atoi("123")
@@ -28,7 +28,7 @@ tr.Try(func() {
 
 ```
 f, _ := os.Open("./exception_test.go")
-trs := NewTryResource(f)
+trs := exception.NewTryResource(f)
 trs.Try(func() {
         // 函数体
 	scanner = bufio.NewScanner(f)
